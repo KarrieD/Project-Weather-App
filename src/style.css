@@ -36,6 +36,10 @@ body {
   font-size: 14px;
 }
 
+.units a {
+  text-decoration: none;
+}
+
 h1 {
   color: #878787;
   font-size: 24px;
