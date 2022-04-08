@@ -36,6 +36,15 @@ body {
   font-size: 14px;
 }
 
+.weather-temperature .active {
+  color: rgb(33, 33, 33);
+  cursor: default;
+}
+
+.weather-temperature .active:hover {
+  text-decoration: none;
+}
+
 .units a {
   text-decoration: none;
 }
@@ -64,6 +73,5 @@ li {
 }
 
 li::first-letter {
-      text-transform: capitalize;
-
+  text-transform: capitalize;
 }
