@@ -2,7 +2,7 @@ function formatDate(timestamp) {
   let date = new Date(timestamp);
   let hours = date.getHours();
   if (hours < 10) {
-    hours = `0${minutes}`;
+    hours = `0${hours}`;
   }
   let minutes = date.getMinutes();
   if (minutes < 10) {
@@ -31,7 +31,7 @@ function displayTemperature(response) {
   let iconElemnt = document.querySelector("#icon");
 
   fahrenheitTemperature = response.data.main.temp;
-
+  console.log(response);
   temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
   cityElement.innerHTML = response.data.name;
   descriptionElement.innerHTML = response.data.weather[0].description;
@@ -43,7 +43,7 @@ function displayTemperature(response) {
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
 
-  iconElemnt.setAttribute("alt", response.data.weather[0].description);
+  http: iconElemnt.setAttribute("alt", response.data.weather[0].description);
 }
 
 function search(city) {
@@ -57,9 +57,6 @@ function handleSubmit(event) {
   let cityInputElement = document.querySelector("#city-input");
   search(cityInputElement.value);
 }
-
-let form = document.querySelector("#search-form");
-form.addEventListener("submit", handleSubmit);
 
 function displayCelsiusTemperature(event) {
   event.preventDefault();
@@ -80,6 +77,9 @@ function displayFahrenheitTemperature(event) {
 }
 
 let fahrenheitTemperature = null;
+
+let form = document.querySelector("#search-form");
+form.addEventListener("submit", handleSubmit);
 
 let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", displayCelsiusTemperature);
